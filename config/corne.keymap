@@ -117,9 +117,9 @@
 
         System {
             bindings = <
-&kp Q   &trans  &trans  &trans  &trans  &trans       &bt BT_CLR    &bt BT_PRV    &bt BT_NXT    &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &soft_off    &soft_off     &trans        &trans        &trans  &trans  &trans
+&kp G   &trans  &trans  &trans  &trans  &trans       &none         &none         &bt BT_PRV    &bt BT_NXT  &bt BT_CLR  &trans
+&trans  &trans  &trans  &trans  &trans  &trans       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans      &trans      &trans
+&trans  &trans  &trans  &trans  &trans  &soft_off    &soft_off     &trans        &trans        &trans      &trans      &trans
                         &trans  &tog 2  &trans       &trans        &trans        &trans
             >;
         };
