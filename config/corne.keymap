@@ -10,9 +10,9 @@
 
 #define BASE 0
 #define DVORAK 1
-#define SYM 2
-#define NAV 3
-#define SYSTEM 4
+#define SYM 3
+#define NAV 4
+#define SYSTEM 2
 
 &mt {
     tapping-term-ms = <300>;
@@ -73,7 +73,7 @@
         compatible = "zmk,combos";
 
         soft_off_combo {
-            bindings = <&kp K>;
+            bindings = <&tog 2>;
             key-positions = <5 6 4 7>;
         };
     };
