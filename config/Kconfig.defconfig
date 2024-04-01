@@ -1,0 +1,4 @@
+config ZMK_KEYBOARD_NAME
+  default "chocofi ble"
+config CONFIG_ZMK_HID_INDICATORS
+  default y
