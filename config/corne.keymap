@@ -5,6 +5,7 @@
  */
 
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
 // #define BASE 0
@@ -123,19 +124,19 @@
 
         layer_1 {
             bindings = <
-&kp TAB    &kp N1  &kp N2   &kp N3   &kp N4     &kp N5           &kp N6      &kp N7        &kp N8           &kp N9            &kp N0    &kp BACKSPACE
-&kp LCTRL  &none   &kp H    &kp K    &kp J      &kp L            &kp MINUS   &kp PLUS      &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp BSLH  &kp GRAVE
-&kp LSHFT  &none   &none    &kp C    &none      &none            &kp UNDER   &kp EQUAL     &kp LBKT         &kp RBKT          &kp PIPE  &kp TILDE
-                            &kp LGUI &kp SPACE  &none            &none       &kp ENTER   &kp BACKSPACE
-                >;
-            };
+&kp TAB    &kp N1  &kp N2  &kp N3    &kp N4     &kp N5    &kp N6     &kp N7     &kp N8            &kp N9             &kp N0    &kp BACKSPACE
+&kp LCTRL  &none   &kp H   &kp K     &kp J      &kp L     &kp MINUS  &kp PLUS   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BSLH  &kp GRAVE
+&kp LSHFT  &none   &none   &kp C     &none      &none     &kp UNDER  &kp EQUAL  &kp LBKT          &kp RBKT           &kp PIPE  &kp TILDE
+                           &kp LGUI  &kp SPACE  &none     &none      &kp ENTER  &kp BACKSPACE
+            >;
+        };
 
         layer_2 {
             bindings = <
-&kp TAB    &kp N1  &kp N2  &kp N3  &kp N4     &kp N5      &kp N6    &kp N7     &kp N8         &kp N9     &kp N0     &none
-&kp LCTRL  &none   &kp H   &kp K   &kp J      &kp L       &kp LEFT  &kp DOWN   &kp UP         &kp RIGHT  &kp LC(A)  &none
-&kp LSHFT  &none   &none   &kp C   &none      &none       &none     &none      &none          &none      &none      &none
-                           &none   &kp SPACE  &kp FSLH    &none     &kp ENTER  &kp BACKSPACE
+&kp TAB    &kp N1  &kp N2  &kp N3      &kp N4     &kp N5      &kp N6    &kp N7     &kp N8         &kp N9      &kp N0      &none
+&kp LCTRL  &none   &kp H   &kp K       &kp J      &kp L       &kp LEFT  &kp DOWN   &kp UP         &kp RIGHT   &kp LC(A)   &none
+&kp LSHFT  &none   &none   &kp C       &none      &none       &none     &none      &none          &bt BT_PRV  &bt BT_NXT  &none
+                           &bt BT_CLR  &kp SPACE  &kp FSLH    &none     &kp ENTER  &kp BACKSPACE
             >;
         };
     };
