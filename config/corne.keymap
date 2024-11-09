@@ -7,11 +7,9 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-#define BASE 0
-#define DVORAK 1
-#define SYM 3
-#define NAV 4
-#define SYSTEM 2
+// #define BASE 0
+// #define SYM 1
+// #define NAV 2
 
 &mt {
     tapping-term-ms = <300>;
@@ -93,45 +91,51 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  xxx |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | xxx |
-            // |  xxx |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  | xxx |
-            // |  xxx |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | xxx |
-            //                    | esc | nav | ent |   | spc | sym  | bspc |
+        //         default_layer {
+        //             bindings = <
+        // &kp ESC   &kp Q        &kp W           &kp E         &kp R       &kp T        &kp Y      &kp U       &kp I          &kp O           &kp P            &kp GRAVE
+        // &kp TAB   &hm LCTRL A  &hm LEFT_ALT S  &hm LSHIFT D  &hm LGUI F  &kp G        &kp H      &hm LGUI J  &hm RSHIFT K   &hm LEFT_ALT L  &hm LCTRL SEMI   &kp SQT
+        // &kp NUBS  &kp Z        &kp X           &kp C         &kp V       &kp B        &kp N      &kp M       &kp COMMA      &kp DOT         &kp LEFT_BRACKET &kp RIGHT_BRACKET
+        //                                        &mo SYM       &mo SPACE   &kp FSLH     &mo NAV    &mo ENTER   &kp BACKSPACE
+        //             >;
+        //         };
+        //         SYM {
+        //             bindings = <
+        //             >;
+        //         };
+        //         NAV {
+        //             bindings = <
+        // &kp TAB    &kp N1  &kp N2   &kp N3   &kp N4     &kp N5           &kp N6     &kp N7        &kp N8         &kp N9        &kp N0    &none
+        // &kp LCTRL  &none   &kp H    &kp K    &kp J      &kp L            &kp LEFT   &kp DOWN      &kp UP         &kp RIGHT     &kp C(A)  &none
+        // &kp LSHFT  &none   &none    &kp C    &none      &none            &none      &none         &none  &none   &none  &none
+        //                             &kp LGUI &kp SPACE  &none            &none      &none   &none
+        //             >;
+        //         };
 
+        layer_0 {
             bindings = <
-&none  &kp Q        &kp W           &kp E         &kp R       &kp T        &kp Y      &kp U       &kp I          &kp O           &kp P           &none
-&none  &hm LCTRL A  &hm LEFT_ALT S  &hm LSHIFT D  &hm LGUI F  &kp G        &kp H      &hm LGUI J  &hm RSHIFT K   &hm LEFT_ALT L  &hm LCTRL SEMI  &none
-&none  &kp Z        &kp X           &kp C         &kp V       &kp B        &kp N      &kp M       &kp COMMA      &kp DOT         &kp FSLH        &none
-                                    &kp ESC       &mo 3       &kp ENTER    &kp SPACE  &mo 2       &kp BACKSPACE
+&kp ESC   &kp Q        &kp W           &kp E         &kp R       &kp T       &kp Y  &kp U       &kp I          &kp O           &kp P             &kp GRAVE
+&kp TAB   &hm LCTRL A  &hm LEFT_ALT S  &hm LSHIFT D  &hm LGUI F  &kp G       &kp H  &hm LGUI J  &hm RSHIFT K   &hm LEFT_ALT L  &hm LCTRL SEMI    &kp SQT
+&kp NUBS  &kp Z        &kp X           &kp C         &kp V       &kp B       &kp N  &kp M       &kp COMMA      &kp DOT         &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+                                       &none         &kp SPACE   &kp FSLH    &none  &kp ENTER   &kp BACKSPACE
             >;
         };
 
-        DVORAK {
+        layer_1 {
             bindings = <
-&none  &kp SQT      &kp COMMA       &kp DOT       &kp P       &kp Y        &kp F      &kp G       &kp C          &kp R           &kp L        &none
-&none  &hm LCTRL A  &hm LEFT_ALT O  &hm LSHIFT E  &hm LGUI U  &kp I        &kp D      &hm LGUI H  &hm RSHIFT T   &hm LEFT_ALT N  &hm LCTRL S  &none
-&none  &kp SEMI     &kp Q           &kp J         &kp K       &kp X        &kp B      &kp M       &kp W          &kp V           &kp Z        &none
-                                    &kp ESC       &mo 3       &kp ENTER    &kp SPACE  &mo 2       &kp BACKSPACE
-            >;
-        };
+&kp TAB    &kp N1  &kp N2   &kp N3   &kp N4     &kp N5           &kp N6      &kp N7        &kp N8           &kp N9            &kp N0    &kp BACKSPACE
+&kp LCTRL  &none   &kp H    &kp K    &kp J      &kp L            &kp MINUS   &kp PLUS      &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp BSLH  &kp GRAVE
+&kp LSHFT  &none   &none    &kp C    &none      &none            &kp UNDER   &kp EQUAL     &kp LBKT         &kp RBKT          &kp PIPE  &kp TILDE
+                            &kp LGUI &kp SPACE  &none            &none       &kp ENTER   &kp BACKSPACE
+                >;
+            };
 
-        SYM {
+        layer_2 {
             bindings = <
-&none  &kp EXCL   &kp AT     &kp POUND         &kp DLLR        &kp PRCNT    &kp CARET  &kp AMPS        &kp STAR          &kp LPAR   &kp RPAR   &none
-&none  &kp KP_N1  &kp KP_N2  &mt LSHIFT KP_N3  &mt LGUI KP_N4  &kp KP_N5    &kp KP_N6  &mt LGUI KP_N7  &mt LSHIFT KP_N8  &kp KP_N9  &kp KP_N0  &none
-&none  &kp LBRC   &kp RBRC   &kp MINUS         &kp EQUAL       &kp GRAVE    &kp SLASH  &kp QUESTION    &bkt              &kp SQT    &bSlh      &none
-                             &kp ESC           &none           &kp ENTER    &kp SPACE  &none           &kp BACKSPACE
-            >;
-        };
-
-        NAV {
-            bindings = <
-&none  &kp LG(LBKT)          &kp LG(RBKT)   &kp LC(LS(TAB))  &kp LC(TAB)    &trans           &kp TAB        &kp C_PP      &kp K_MUTE     &kp C_VOLUME_DOWN  &kp C_VOLUME_UP    &none
-&none  &kp LCTRL             &kp LALT       &kp LSHIFT       &kp LGUI       &trans           &kp LG(LEFT)   &kp LEFT      &kp DOWN       &kp UP             &kp RIGHT          &none
-&none  &kp LG(LS(NUMBER_6))  &kp LG(RS(Q))  &kp LC(LEFT)     &kp LC(RIGHT)  &kp LA(LG(I))    &kp LG(RIGHT)  &kp LA(LEFT)  &kp LA(RIGHT)  &kp LA(LS(LEFT))   &kp LA(LS(RIGHT))  &none
-                                            &kp ESC          &none          &kp ENTER        &kp SPACE      &toggle_dvo   &kp BACKSPACE
+&kp TAB    &kp N1  &kp N2  &kp N3  &kp N4     &kp N5      &kp N6    &kp N7     &kp N8         &kp N9     &kp N0     &none
+&kp LCTRL  &none   &kp H   &kp K   &kp J      &kp L       &kp LEFT  &kp DOWN   &kp UP         &kp RIGHT  &kp LC(A)  &none
+&kp LSHFT  &none   &none   &kp C   &none      &none       &none     &none      &none          &none      &none      &none
+                           &none   &kp SPACE  &kp FSLH    &none     &kp ENTER  &kp BACKSPACE
             >;
         };
     };
