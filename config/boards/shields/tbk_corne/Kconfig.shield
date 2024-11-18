@@ -1,8 +1,10 @@
-# Copyright (c) 2020 Pete Johanson
-# SPDX-License-Identifier: MIT
+config SHIELD_TBK_CORNE
+    bool
 
 config SHIELD_TBK_CORNE_LEFT
     def_bool $(shields_list_contains,tbk_corne_left)
+        select SHIELD_TBK_CORNE 
 
 config SHIELD_TBK_CORNE_RIGHT
     def_bool $(shields_list_contains,tbk_corne_right)
+        select SHIELD_TBK_CORNE

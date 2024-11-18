@@ -5,6 +5,7 @@
  */
 
 #include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
 // #define BASE 0
@@ -28,63 +29,6 @@
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
-        };
-
-        l_pht: left_positional_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-unless-interrupted";
-            tapping-term-ms = <130>;                        // <---[[produces tap if held longer than tapping-term-ms]]
-            quick-tap-ms = <200>;
-            bindings = <&kp>, <&kp>;
-
-            hold-trigger-key-positions = <5 6 7 8 9 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 34 35 36 37>;
-        };
-
-        r_pht: right_positional_hold_tap {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-unless-interrupted";
-            tapping-term-ms = <130>;                        // <---[[produces tap if held longer than tapping-term-ms]]
-            quick-tap-ms = <200>;
-            bindings = <&kp>, <&kp>;
-
-            hold-trigger-key-positions = <0 1 2 3 4 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33>;
-        };
-
-        bkt: bkt {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BKT";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
-
-            tapping-term-ms = <180>;
-        };
-
-        bSlh: bSlh {
-            compatible = "zmk,behavior-tap-dance";
-            label = "BSLH";
-            #binding-cells = <0>;
-            bindings = <&kp PIPE>, <&kp BACKSLASH>;
-        };
-    };
-
-    combos {
-        compatible = "zmk,combos";
-
-        off {
-            bindings = <&soft_off>;
-            key-positions = <25 34>;
-        };
-    };
-
-    macros {
-        toggle_dvo: toggle_dvo {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&macro_tap>, <&kp LC(SPACE) &tog 1>;
-
-            label = "TOGGLE_DVO";
         };
     };
 
@@ -118,24 +62,6 @@
 &kp N8    &kp A  &kp S  &kp D         &kp F      &kp G   &kp H         &kp J   &kp K      &kp L    &kp SEMI          &kp SQT
 &kp NUBS  &kp Z  &kp X  &kp C         &kp V      &kp B   &kp N         &kp M   &kp COMMA  &kp DOT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
                         &kp NUMBER_1  &kp SPACE  &kp N2  &kp NUMBER_3  &kp N4  &kp N5
-            >;
-        };
-
-        layer_1 {
-            bindings = <
-&kp TAB    &kp N1  &kp N2  &kp N3    &kp N4     &kp N5  &kp N6     &kp N7     &kp N8            &kp N9             &kp N0    &kp BACKSPACE
-&kp LCTRL  &none   &kp H   &kp K     &kp J      &kp L   &kp MINUS  &kp PLUS   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BSLH  &kp GRAVE
-&kp LSHFT  &none   &none   &kp C     &none      &none   &kp UNDER  &kp EQUAL  &kp LBKT          &kp RBKT           &kp PIPE  &kp TILDE
-                           &kp LGUI  &kp SPACE  &none   &none      &kp ENTER  &kp BACKSPACE
-            >;
-        };
-
-        layer_2 {
-            bindings = <
-&kp TAB    &kp N1  &kp N2  &kp N3  &kp N4     &kp N5    &kp N6    &kp N7     &kp N8         &kp N9     &kp N0     &none
-&kp LCTRL  &none   &kp H   &kp K   &kp J      &kp L     &kp LEFT  &kp DOWN   &kp UP         &kp RIGHT  &kp LC(A)  &none
-&kp LSHFT  &none   &none   &kp C   &none      &none     &none     &none      &none          &none      &none      &none
-                           &none   &kp SPACE  &kp FSLH  &none     &kp ENTER  &kp BACKSPACE
             >;
         };
     };
