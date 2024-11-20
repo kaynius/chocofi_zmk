@@ -55,13 +55,39 @@
         //                             &kp LGUI &kp SPACE  &none            &none      &none   &none
         //             >;
         //         };
-
+//
+//         layer_0 {
+//             bindings = <
+// &kp N7    &kp Q  &kp W  &kp E         &kp R      &kp T   &kp Y         &kp U   &kp I      &kp O    &kp P             &kp GRAVE
+// &kp N8    &kp A  &kp S  &kp D         &kp F      &kp G   &kp H         &kp J   &kp K      &kp L    &kp SEMI          &kp SQT
+// &kp NUBS  &kp Z  &kp X  &kp C         &kp V      &kp B   &kp N         &kp M   &kp COMMA  &kp DOT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+//                         &kp NUMBER_1  &kp SPACE  &kp N2  &kp NUMBER_3  &kp N4  &kp N5
+//             >;
+//         };
         layer_0 {
             bindings = <
-&kp N7    &kp Q  &kp W  &kp E         &kp R      &kp T   &kp Y         &kp U   &kp I      &kp O    &kp P             &kp GRAVE
-&kp N8    &kp A  &kp S  &kp D         &kp F      &kp G   &kp H         &kp J   &kp K      &kp L    &kp SEMI          &kp SQT
-&kp NUBS  &kp Z  &kp X  &kp C         &kp V      &kp B   &kp N         &kp M   &kp COMMA  &kp DOT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-                        &kp NUMBER_1  &kp SPACE  &kp N2  &kp NUMBER_3  &kp N4  &kp N5
+&kp ESC   &kp Q        &kp W           &kp E         &kp R       &kp T       &kp Y  &kp U       &kp I          &kp O           &kp P             &kp GRAVE
+&kp TAB   &hm LCTRL A  &hm LEFT_ALT S  &hm LSHIFT D  &hm LGUI F  &kp G       &kp H  &hm LGUI J  &hm RSHIFT K   &hm LEFT_ALT L  &hm LCTRL SEMI    &kp SQT
+&kp NUBS  &kp Z        &kp X           &kp C         &kp V       &kp B       &kp N  &kp M       &kp COMMA      &kp DOT         &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+                                       &none         &kp SPACE   &kp FSLH    &none  &kp ENTER   &kp BACKSPACE
+            >;
+        };
+
+        layer_1 {
+            bindings = <
+&kp TAB    &kp N1  &kp N2   &kp N3   &kp N4     &kp N5           &kp N6      &kp N7        &kp N8           &kp N9            &kp N0    &kp BACKSPACE
+&kp LCTRL  &none   &kp H    &kp K    &kp J      &kp L            &kp MINUS   &kp PLUS      &kp LEFT_BRACKET &kp RIGHT_BRACKET &kp BSLH  &kp GRAVE
+&kp LSHFT  &none   &none    &kp C    &none      &none            &kp UNDER   &kp EQUAL     &kp LBKT         &kp RBKT          &kp PIPE  &kp TILDE
+                            &kp LGUI &kp SPACE  &none            &none       &kp ENTER   &kp BACKSPACE
+                >;
+            };
+
+        layer_2 {
+            bindings = <
+&kp TAB    &kp N1  &kp N2  &kp N3  &kp N4     &kp N5      &kp N6    &kp N7     &kp N8         &kp N9     &kp N0     &none
+&kp LCTRL  &none   &kp H   &kp K   &kp J      &kp L       &kp LEFT  &kp DOWN   &kp UP         &kp RIGHT  &kp LC(A)  &none
+&kp LSHFT  &none   &none   &kp C   &none      &none       &none     &none      &none          &none      &none      &none
+                           &none   &kp SPACE  &kp FSLH    &none     &kp ENTER  &kp BACKSPACE
             >;
         };
     };
