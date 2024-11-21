@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: MIT
  */
 
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
@@ -69,14 +70,14 @@
             bindings = <
 &kp ESC   &kp Q        &kp W           &kp E         &kp R       &kp T     &kp Y  &kp U       &kp I          &kp O           &kp P             &kp GRAVE
 &kp TAB   &hm LCTRL A  &hm LEFT_ALT S  &hm LSHIFT D  &hm LGUI F  &kp G     &kp H  &hm LGUI J  &hm RSHIFT K   &hm LEFT_ALT L  &hm LCTRL SEMI    &kp SQT
-&kp NUBS  &kp Z        &kp X           &kp C         &kp V       &kp B     &kp N  &kp M       &kp COMMA      &kp DOT         &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+&kp BACKSLASH  &kp Z        &kp X           &kp C         &kp V       &kp B     &kp N  &kp M       &kp COMMA      &kp DOT         &kp LEFT_BRACKET  &kp RIGHT_BRACKET
                                        &mo 1         &kp SPACE   &kp FSLH  &mo 2  &kp ENTER   &kp BACKSPACE
             >;
         };
 
         layer_1 {
             bindings = <
-&kp TAB    &kp N1  &kp N2  &kp N3    &kp N4     &kp N5  &kp N6     &kp N7     &kp N8            &kp N9             &kp N0    &kp BACKSPACE
+&kp TAB    &kp EXCL  &kp N2  &kp N3    &kp N4     &kp N5  &kp N6     &kp N7     &kp N8            &kp N9             &kp N0    &kp BACKSPACE
 &kp LCTRL  &none   &kp H   &kp K     &kp J      &kp L   &kp MINUS  &kp PLUS   &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BSLH  &kp GRAVE
 &kp LSHFT  &none   &none   &kp C     &none      &none   &kp UNDER  &kp EQUAL  &kp LBKT          &kp RBKT           &kp PIPE  &kp TILDE
                            &kp LGUI  &kp SPACE  &none   &none      &kp ENTER  &kp BACKSPACE
